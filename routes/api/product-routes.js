@@ -28,6 +28,7 @@ router.get('/:id', async (req, res) => {
 
     if (!productData) {
       res.status(404).json({ message: 'No product matches your search' })
+      return
     }
     res.status(200).json(productData)
 
@@ -121,6 +122,7 @@ router.delete('/:id', async (req, res) => {
 
     if (!productData) {
       res.status(404).json({ message: 'No product found to delete'})
+      return
     }
     res.status(200).json(productData)
   } catch (error) {
